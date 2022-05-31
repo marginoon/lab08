@@ -12,6 +12,3 @@ RUN cmake --build _build
 ENV LOG_PATH /home/logs/log.txt
 
 VOLUME /home/logs
-
-
-ENTRYPOINT ./demo
