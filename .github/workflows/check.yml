@@ -1,5 +1,6 @@
 name: Docker_check
 on:
+  push:
 
   
 jobs:
