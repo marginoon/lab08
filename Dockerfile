@@ -1,9 +1,9 @@
 FROM ubuntu:latest
 RUN apt update
 
-RUN apt install -yy g++ cmake
+RUN apt install -yy g++ 
 RUN apt install -yy gcc 
-
+RUN apt install -yy cmake
 COPY . print/
 WORKDIR print
 
