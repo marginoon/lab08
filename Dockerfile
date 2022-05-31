@@ -1,7 +1,8 @@
 FROM ubuntu:latest
 RUN apt update
 
-RUN apt install -yy gcc g++ cmake
+RUN apt install -yy g++ cmake
+RUN apt install -yy gcc 
 
 COPY . print/
 WORKDIR print
