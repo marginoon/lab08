@@ -1,8 +1,7 @@
 name: Docker_check
 on:
   push:
-   
-   
+    
 jobs:
   Docker:
       runs-on: ubuntu-latest
