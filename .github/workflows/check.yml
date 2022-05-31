@@ -27,7 +27,7 @@ jobs:
 
         - name: docker cp
           shell: bash
-          run: docker cp taskdock:/task/_build artifacts
+          run: docker cp taskdock:/print/_build artifacts
             
         - name: Publick
           uses: actions/upload-artifact@v2
