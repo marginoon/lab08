@@ -1,0 +1,36 @@
+name: Docker_check
+on:
+  push:
+  
+jobs:
+  Docker:
+      runs-on: ubuntu-latest
+      steps:
+
+        - uses: actions/checkout@v3
+
+        - name: build
+          shell: bash
+          run: | 
+            git submodule update --init --recursive
+            docker build -t builder .
+
+        - name: run
+          shell: bash
+          run: |
+            docker run --name=taskdock -v "$(pwd)/logs/:/home/logs/" builder
+            exit
+            
+        - name: artifacts
+          shell: bash
+          run: mkdir artifacts
+
+        - name: docker cp
+          shell: bash
+          run: docker cp taskdock:/task/_build artifacts
+            
+        - name: Publick
+          uses: actions/upload-artifact@v2
+          with:
+            name: artifacts
+            path: artifacts/
